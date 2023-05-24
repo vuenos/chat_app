@@ -5,9 +5,9 @@ const userSchema = new mongoose.Schema({
   email: {type: String, required: true, minlength: 3, maxlength: 200, unique: true},
   password: {type: String, required: true, minlength: 3, maxlength: 1024},
 }, {
-  timestamp: true
+  timestamps: { createdAt: true, updatedAt: true }
 });
 
 const userModel = mongoose.model("User", userSchema);
 
-module.export = userModel;
+module.exports = userModel;
