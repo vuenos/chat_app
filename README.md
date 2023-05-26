@@ -7,7 +7,25 @@
 - NodeJS
 - WebSocket
 
-### WebSocket
+### 📂 MongoDB https://www.mongodb.com
+- 크로스 플랫폼 [도큐멘트 지향 데이터베이스](https://aws.amazon.com/ko/nosql/document/) 시스템. [NoSQL 데이터베이스](https://aws.amazon.com/ko/nosql/).
+- Collection 안에 Document 들이 있고 그 안에 JSON 형태로 데이터를 저장함.
+- JSON 형태로 데이터가 자유롭게 들어감.(Key-Value)
+- 중복데이터를 제거하지 않는다. 정규화 없이 쓰인다.
+- 분산처리가 잘된다. 여러 DB 에서 사용가능. 그래서 일관성, 정확도가 떨어질 수 있다.
+- SNS, 채팅, 게시판, 온라인 게임등에 유용하다.
+
+
+### 🎛️ Node.js
+- Chrome V8 javaScript 엔진으로 빌드 된 javaScript 런타임(특정 언어로 만든 프로그램을 실행할 수 있는 환경)
+- javaScript 를 서버에서도 사용할 수 있게 만들 프로그램
+- 내장 HTTP 서버 라이브러리를 포함하고 있어서, 아파치 등의 별도 소프트웨어 없이 동작가능.
+- 플랫폼의 제약없이 실행 가능.
+- javaScript 가 웹브라우저에서만 동작 하는 것에서 독립시켜서 터미널 환경에서 실행 가능하다.
+- [참고](https://hanamon.kr/nodejs-%EA%B0%9C%EB%85%90-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0/)
+
+
+### ⛓️ WebSocket
 - wss:// 프로토콜을 이용하여 클라이언트와 서버간의 양방향 데이터 통신을 가능하게 해준다.
 - 데이터는 패킷(Packet) 형태로 전달되면, Connection 이 이뤄지면 클라이언트에서 추가로 HTTP 요청없이 양방향 통신이 가능하다.
 ```javascript
