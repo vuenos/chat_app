@@ -13,7 +13,7 @@ const Login = () => {
     <>
       <Form onSubmit={loginUser}>
         <Row style={{ height: "100vh", justifyContent: "center", paddingTop: "10%" }}>
-          <Col xs={6}>
+          <Col md={6} sm={10}>
             <Stack gap={3}>
               <h2>Login</h2>
 
