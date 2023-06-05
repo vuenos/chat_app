@@ -6,7 +6,7 @@ import avatar from "../../assets/pic_profile.svg"
 const UserChat = ({chat, user}) => {
   const { recipientUser } = useFetchRecipientUser(chat, user);
 
-  console.log((recipientUser))
+  console.log("UserChat", recipientUser)
 
   return (
     <Stack direction="horizontal" gap={3} className="user-card align-items-center p-2 justify-content-between" role="button">
