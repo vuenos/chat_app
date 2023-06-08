@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import { ChatContext } from "../../context/ChatContext";
 import { useFetchRecipientUser } from "../../hooks/useFetchRecipient";
@@ -11,12 +11,24 @@ const ChatBox = () => {
   const { currentChat, messages, isMessagesLoading, sendTextMessage } = useContext(ChatContext);
   const { recipientUser } = useFetchRecipientUser(currentChat, user);
   const [textMessage, setTextMessage] = useState("");
+  const scroll = useRef();
 
   console.log("TEXT :::", textMessage)
 
-  console.log("SENDER_ID", messages?.senderId)
-  console.log("USER_ID", user._id)
-  console.log("recipientUser", recipientUser)
+  // console.log("SENDER_ID", messages?.senderId)
+  // console.log("USER_ID", user._id)
+  // console.log("recipientUser", recipientUser)
+
+  useEffect(() => {
+    scroll.current?.scrollIntoView({behavior: "smooth"})
+  }, [messages]);
+
+
+  if (!user) {
+    return (
+      <p style={{ textAlign: "center", width: "100%" }}>Loading user...</p>
+    );
+  }
 
   if (!recipientUser) return (
     <p style={{ textAlign: "center", width: "100%" }}>
@@ -43,6 +55,7 @@ const ChatBox = () => {
               ? "message self align-self-end flex-glow-0" 
               : "message align-self-start flex-glow-0"
             }`}
+            ref={scroll}
           >
             <span>{message.text}</span>
             <span className="message-footer">{moment(message.createdAt).calendar()}</span>
