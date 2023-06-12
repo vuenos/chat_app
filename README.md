@@ -86,3 +86,8 @@ Upgrade: websocket
 Sec-WebSocket-Key: Iv8io/9s+lYFgZWcXczP8Q==
 Sec-WebSocket-Version: 13
 ```
+
+### React.js - useContext 
+- 특정 함수나 값을 디른 컴포넌트에 전달하기 위해 중간에 어떤 컴포넌트를 거쳐야 할 경우가 있다.
+- 이런 거쳐야 할 컴포넌트들이 중간에 많아진다면 매무 번거롭고 비효율적이게 된다.
+- 이럴때 Context API 를 사용하면 전역적으로 사용 할 수 있는 값을 관리할 수 있다.
